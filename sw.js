@@ -1,7 +1,7 @@
 // Service Worker para Control de gastos
 // Al agregar archivos nuevos, sumarlos a ASSETS y subir VERSION
 
-const VERSION = '1.2.0';
+const VERSION = '1.2.1';
 
 const ASSETS = [
   './',

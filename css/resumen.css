@@ -36,7 +36,7 @@
   border-top: 1px solid var(--border);
 }
 .sum-split > div { display: grid; gap: var(--space-1); min-width: 0; }
-.sum-num { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.sum-num { font-size: clamp(0.875rem, 4vw, 1.25rem); font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 
 .cmp { display: grid; gap: var(--space-1); padding-top: var(--space-3); border-top: 1px solid var(--border); }
 .cmp-line { margin: 0; font-size: 1rem; }
