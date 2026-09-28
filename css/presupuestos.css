@@ -1,0 +1,32 @@
+/* Presupuestos (barras de progreso) y gastos fijos. */
+
+/* Barra: verde < 80%, amarillo desde 80%, rojo desde 100%. El texto acompaña siempre (no solo color). */
+.budget-item { --bar: var(--income); padding-bottom: var(--space-3); }
+.budget-item.is-warn { --bar: var(--warn); }
+.budget-item.is-over { --bar: var(--expense); }
+.budget-sub { white-space: normal; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+.budget-state { color: var(--bar); font-size: 0.9375rem; font-weight: 700; }
+.progress {
+  height: 10px;
+  margin: 0 var(--space-3);
+  border-radius: 5px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.progress-fill {
+  display: block;
+  height: 100%;
+  width: min(calc(var(--pct, 0) * 1%), 100%);
+  border-radius: 5px;
+  background: var(--bar);
+}
+.budget-item .row-title { white-space: normal; }
+
+/* Monto + moneda en una fila (formularios) */
+.amount-field { display: flex; gap: var(--space-2); align-items: center; }
+.amount-field .input:first-child { flex: 1; }
+
+/* Casilla "Activo" con zona táctil de 48px */
+.check-row { display: flex; align-items: center; gap: var(--space-3); min-height: var(--tap); font-weight: 600; cursor: pointer; }
+.check-row input { width: 24px; height: 24px; flex: none; accent-color: var(--primary); }
+.is-paused .row-title, .is-paused .row-amount { opacity: 0.6; }

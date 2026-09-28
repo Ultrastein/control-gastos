@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Control de gastos</title>
+  <meta name="description" content="Cargá tus gastos en segundos y mirá cuánto entra, cuánto sale y cuánto te queda.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1216" media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Gastos">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/resumen.css">
+  <link rel="stylesheet" href="css/presupuestos.css">
+  <link rel="stylesheet" href="css/analisis.css">
+  <link rel="stylesheet" href="css/reportes.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <nav class="nav" aria-label="Secciones">
+      <span class="brand" aria-hidden="true">Control de gastos</span>
+      <a href="#/resumen" data-section="/resumen">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 20V11M10 20V4M16 20v-6M22 20H2"/></svg>
+        <span>Resumen</span>
+      </a>
+      <a href="#/historial" data-section="/historial">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        <span>Historial</span>
+      </a>
+      <a href="#/presupuestos" data-section="/presupuestos">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+        <span>Presupuestos</span>
+      </a>
+      <a href="#/ajustes" data-section="/ajustes">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+        <span>Ajustes</span>
+      </a>
+    </nav>
+
+    <main id="view" class="view" tabindex="-1">
+      <p class="loading">Cargando…</p>
+      <noscript><p class="loading">Esta app necesita JavaScript para funcionar.</p></noscript>
+    </main>
+
+    <button id="fab" class="fab" type="button" aria-label="Cargar un movimiento nuevo">
+      <svg class="icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+  </div>
+
+  <div id="snackbar" class="snackbar-root" role="status" aria-live="polite"></div>
+  <div id="modal-root"></div>
+  <div id="lock-root"></div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Resumen: selector de mes, tarjeta de totales, comparación y dona por categoría. */
+
+.month-picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.month-label { flex: 1; text-align: center; font-size: 1.125rem; font-weight: 700; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--space-4);
+}
+.sum-section { display: grid; gap: var(--space-4); margin-bottom: var(--space-5); }
+
+.sum-card { display: grid; gap: var(--space-4); }
+.sum-cur { font-size: 1rem; color: var(--text-muted); letter-spacing: 0.04em; }
+.sum-balance { display: grid; gap: var(--space-1); }
+.sum-caption { display: block; color: var(--text-muted); font-size: 1rem; font-weight: 600; }
+.sum-big {
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.sum-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+}
+.sum-split > div { display: grid; gap: var(--space-1); min-width: 0; }
+.sum-num { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+
+.cmp { display: grid; gap: var(--space-1); padding-top: var(--space-3); border-top: 1px solid var(--border); }
+.cmp-line { margin: 0; font-size: 1rem; }
+.cmp-label { font-weight: 700; }
+.cmp-val { font-weight: 600; }
+.cmp-val.is-neutral { color: var(--text-muted); }
+
+.cat-card { display: grid; gap: var(--space-3); }
+.sec-title { font-size: 1.125rem; }
+.donut-wrap { width: min(100%, 220px); margin: 0 auto; }
+.chart { display: block; width: 100%; height: auto; }
+.donut-track { stroke: var(--surface-2); }
+.chart-center { fill: var(--text-muted); font-size: 9px; font-weight: 600; font-family: var(--font); }
+.chart-label { fill: var(--text-muted); font-size: 9px; font-family: var(--font); }
+.bars-axis { stroke: var(--border); }
+
+.cat-rows { border: 0; border-radius: 0; background: transparent; }
+.cat-rows .row { padding-left: 0; padding-right: 0; }
+.cat-pct { color: var(--text-muted); font-weight: 600; font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+
+@media (min-width: 900px) {
+  .cat-card { grid-template-columns: 220px 1fr; align-items: center; column-gap: var(--space-5); }
+  .cat-card .sec-title { grid-column: 1 / -1; }
+  .donut-wrap { width: 220px; }
+}

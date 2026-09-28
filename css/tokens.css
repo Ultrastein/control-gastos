@@ -1,0 +1,91 @@
+/* Tokens de diseño. Modo oscuro: automático (prefers-color-scheme) o forzado con data-theme="dark|light". */
+:root {
+  color-scheme: light dark;
+
+  /* Colores (claro) */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #eceef2;
+  --text: #14171c;
+  --text-muted: #566070;
+  --border: #d5dae2;
+  --primary: #0f6b5c;
+  --primary-soft: #dcefeb;
+  --on-strong: #ffffff;        /* texto sobre primary / gasto / ingreso sólidos */
+  --expense: #b3261e;
+  --income: #0d7a3f;
+  --warn: #946000;
+  --danger: #b3261e;
+  --focus: #1a5fd0;
+  --overlay: rgba(10, 14, 20, 0.5);
+  --inverse-bg: #23272e;
+  --inverse-text: #f2f4f7;
+  --inverse-action: #8fd9c9;
+
+  /* Medidas */
+  --tap: 48px;
+  --nav-h: 64px;
+  --side-w: 232px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --shadow: 0 6px 20px rgba(10, 14, 20, 0.18);
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216;
+    --surface: #181c22;
+    --surface-2: #232933;
+    --text: #eceff3;
+    --text-muted: #a0aab8;
+    --border: #2f3742;
+    --primary: #4fc3ae;
+    --primary-soft: #16332e;
+    --on-strong: #0b1512;
+    --expense: #ff8f86;
+    --income: #6fd39b;
+    --warn: #f5b301;
+    --danger: #ff8f86;
+    --focus: #8ab8ff;
+    --overlay: rgba(0, 0, 0, 0.62);
+    --inverse-bg: #e6e9ee;
+    --inverse-text: #14171c;
+    --inverse-action: #0f6b5c;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1216;
+  --surface: #181c22;
+  --surface-2: #232933;
+  --text: #eceff3;
+  --text-muted: #a0aab8;
+  --border: #2f3742;
+  --primary: #4fc3ae;
+  --primary-soft: #16332e;
+  --on-strong: #0b1512;
+  --expense: #ff8f86;
+  --income: #6fd39b;
+  --warn: #f5b301;
+  --danger: #ff8f86;
+  --focus: #8ab8ff;
+  --overlay: rgba(0, 0, 0, 0.62);
+  --inverse-bg: #e6e9ee;
+  --inverse-text: #14171c;
+  --inverse-action: #0f6b5c;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}

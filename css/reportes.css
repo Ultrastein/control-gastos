@@ -1,0 +1,69 @@
+/* Reportes (día / semana / mes), límite general, fijos próximos, atajos y recibos. Incluye la hoja de impresión (PDF). */
+
+.rep-section { display: grid; gap: var(--space-4); margin-bottom: var(--space-5); }
+.rep-card { display: grid; gap: var(--space-2); }
+.rep-totals { border-top: 0; padding-top: 0; }
+.rep-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border);
+}
+.rep-stat-label { color: var(--text-muted); font-weight: 600; min-width: 0; }
+.rep-stat-val { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; overflow-wrap: anywhere; }
+.rep-card .is-neutral, .cmp-line .is-neutral { color: var(--text-muted); }
+.rep-chart { margin-top: var(--space-3); }
+.rep-chart rect { fill: var(--expense); }
+.rep-rows { border: 0; border-radius: 0; background: transparent; }
+.rep-row { padding-left: 0; padding-right: 0; cursor: default; }
+.rep-row:hover { background: transparent; }
+.rep-actions { margin-top: var(--space-2); }
+.seg-3 + .month-picker { margin-top: var(--space-3); }
+
+.head-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-1); }
+
+/* Límite general y aviso en Resumen (dentro de la página, nunca tapa la pantalla) */
+.limit-card { display: grid; gap: var(--space-2); margin-bottom: var(--space-4); }
+.limit-card.is-warn { border-color: var(--warn); }
+.limit-card.is-over { border-color: var(--danger); }
+.limit-title { font-weight: 700; }
+.limit-card.is-warn .limit-title { color: var(--warn); }
+.limit-card.is-over .limit-title { color: var(--danger); }
+.limit-line { margin: 0; }
+
+/* Fijos: compromiso, próximos y sugeridos */
+.fix-block { margin-top: var(--space-5); display: grid; gap: var(--space-2); }
+.fix-block .sec-title { margin: 0; }
+.suggest-row { display: flex; align-items: center; gap: var(--space-2); padding-right: var(--space-2); }
+.suggest-row .row { flex: 1; min-width: 0; cursor: default; }
+.suggest-row .row:hover { background: transparent; }
+
+/* Atajos y widgets */
+.qa-url { font-size: 1rem; font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; }
+.qa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+
+/* Recibo en la hoja de carga */
+.receipt-row { display: flex; align-items: center; gap: var(--space-2); margin: 0; color: var(--text-muted); }
+.receipt-row[hidden] { display: none; }
+.receipt-row .btn { min-height: 40px; padding: 0 var(--space-3); }
+.receipt-text { flex: 1; min-width: 0; font-size: 0.9375rem; }
+.receipt-img { display: block; width: 100%; max-height: 70dvh; object-fit: contain; border-radius: var(--r-md); background: var(--surface-2); }
+.tag-receipt { background: var(--surface-2); }
+
+.print-only { display: none; }
+
+@media print {
+  :root, :root[data-theme="dark"] {
+    --bg: #ffffff; --surface: #ffffff; --surface-2: #eeeeee; --text: #000000; --text-muted: #333333;
+    --border: #bbbbbb; --expense: #9b1c15; --income: #0a5c2f;
+  }
+  body { background: #fff; color: #000; }
+  .nav, .fab, .snackbar-root, #modal-root, #lock-root, .no-print { display: none !important; }
+  .print-only { display: block; }
+  .app, .view { padding: 0 !important; margin: 0 !important; max-width: none !important; min-height: 0; }
+  .card { break-inside: avoid; box-shadow: none; }
+  .rep-section { break-inside: auto; }
+  a { color: inherit; text-decoration: none; }
+}

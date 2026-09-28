@@ -1,0 +1,78 @@
+{
+  "name": "Control de gastos",
+  "short_name": "Gastos",
+  "description": "Cargá tus gastos en segundos y mirá cuánto entra, cuánto sale y cuánto te queda.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "es-AR",
+  "theme_color": "#0f6b5c",
+  "background_color": "#f6f7f9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "finance",
+    "productivity"
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Nuevo gasto",
+      "short_name": "Nuevo gasto",
+      "description": "Abrí la carga rápida de un gasto",
+      "url": "./#/quick-add",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Nuevo ingreso",
+      "short_name": "Ingreso",
+      "description": "Abrí la carga rápida de un ingreso",
+      "url": "./#/quick-add?type=ingreso",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Reportes",
+      "short_name": "Reportes",
+      "description": "Reporte del mes, la semana o el día",
+      "url": "./#/reportes",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
